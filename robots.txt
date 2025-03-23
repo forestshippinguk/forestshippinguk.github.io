@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.forestshipping.co.uk/sitemap.xml
