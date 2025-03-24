@@ -23,21 +23,25 @@ h1.display-4.mb-4 {
 }
 
 #home {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../images/home_bg.jpg") center/cover;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../images/home_bg.webp") center/cover;
 }
 
 #services {
-    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("../images/services_bg.jpg") center/cover;
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("../images/services_bg.webp") center/cover;
 }
 
 #quote {
-    /* background: url("static/images/quote_bg.jpg") center/cover; */
-    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url("../images/quote_bg.jpg") center/cover;
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url("../images/quote_bg.webp") center/cover;
 }
 
 #contact {
-    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("../images/contact_bg.jpg") center/cover;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("../images/contact_bg.webp") center/cover;
 }
+
+#customs_warehouse {
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("../images/customs_warehouse_bg.webp") center/cover;
+}
+
 
 .navbar {
     background-color: var(--nav-color) !important;
@@ -108,5 +112,145 @@ h1.display-4.mb-4 {
     
     .display-4 {
         font-size: 2.5rem;
+    }
+}
+
+
+/* Index Page Links to Customs Warehouse page */
+
+.cta-bg {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cta-bg h3 {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.cta-bg .lead {
+    color: #4a5568;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Customs Warehouse Page Specific Styles */
+.customs-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+#customsForm {
+    max-width: 800px;
+        margin: 0 auto;
+}
+
+.customs-content ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.customs-content li::before {
+    content: "✓";
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+#signaturePad {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+#signatureCanvas {
+    width: 100% !important;  /* Ensure full width of column */
+    touch-action: none;  /* Prevent scrolling on canvas */
+}
+
+/* Optional: Add some spacing between canvas and button on mobile */
+@media (max-width: 767px) {
+    .text-md-end {
+        margin-top: 1rem;
+    }
+}
+
+.modal-content {
+    border: 2px solid var(--primary-color);
+}
+
+#successModal .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+#successModal .modal-content {
+    pointer-events: none; /* Disable interactions with modal content */
+}
+
+#successModal .modal-body {
+    pointer-events: auto; /* Re-enable for text selection */
+}
+
+/* Form Validation */
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+}
+
+.was-validated .form-check-input:invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+    font-size: 0.875em;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback {
+    display: block;
+}
+
+
+/* Background image section */
+.customs-bg-section {
+    background-image: url('../images/customs_warehouse_bg.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 1.5rem 0;
+}
+
+.customs-bg-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(240, 240, 240, 0.9);
+    z-index: 1;
+}
+
+.customs-bg-section .container {
+    position: relative;
+    z-index: 2;
+    background: none;
+    max-width: 800px;
+}
+
+.date-display {
+    font-size: 1.1rem;
+    color: #495057;
+    padding-left: 0;
+    cursor: default;
+}
+
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .customs-bg-section {
+        background-size: contain;
+        padding: 2rem 0;
     }
 }
