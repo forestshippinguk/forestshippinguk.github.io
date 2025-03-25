@@ -88,11 +88,22 @@
         <div class="container py-5">
             <h2 class="text-center mb-5">Comprehensive Logistics Solutions</h2>
             
-            <!-- AD BANNER  -->
-            <div class="alert alert-info mb-5">
-                <strong>New Offer:</strong> First 10 importers get 50% off → 
-                <a href="customs-warehouse.html" class="alert-link">Apply Now</a>
+        <!-- Combined Offer Banner with Countdown -->
+        <div class="alert alert-info mb-5">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="mb-2 mb-md-0 text-center text-md-start">
+              <strong class="fs-5">Limited Time Offer:</strong>
+              <a href="customs-warehouse.html" class="alert-link fs-5">First 10 importers get 50% off → Apply Now</a>
             </div>
+
+            <div class="countdown-timer ms-md-3 text-center">
+              <div class="small text-muted">Offer expires in:</div>
+              <div id="countdown-timer" class="fs-5 fw-bold">
+                9d 00h 00m 00s
+              </div>
+            </div>
+          </div>
+        </div>
             
             <p class="text-center lead mb-4"><strong>Forest Shipping UK's services include:</strong></p>
             <div class="row g-4">
@@ -304,6 +315,40 @@
                 history.replaceState(null, '', window.location.pathname);
             }
         })()
+    </script>
+    
+        <script>
+    // Fixed end date (9 days from now)
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 9); // Add 9 days to current date
+
+    function updateTimer() {
+      const now = new Date();
+      const remaining = endDate - now;
+
+      // Stop if expired
+      if (remaining <= 0) {
+        document.getElementById('countdown-timer').textContent = "OFFER EXPIRED";
+        return;
+      }
+
+      // Calculate time units
+      const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+      // Update display
+      document.getElementById('countdown-timer').innerHTML = `
+        ${days}d ${hours.toString().padStart(2, '0')}h 
+        ${minutes.toString().padStart(2, '0')}m 
+        ${seconds.toString().padStart(2, '0')}s
+      `;
+    }
+
+    // Update immediately and every second
+    updateTimer();
+    setInterval(updateTimer, 1000);
     </script>
     
     <footer class="bg-dark text-white py-3">
