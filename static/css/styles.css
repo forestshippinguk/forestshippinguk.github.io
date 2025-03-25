@@ -246,6 +246,17 @@ h1.display-4.mb-4 {
     cursor: default;
 }
 
+.countdown-timer {
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  min-width: 180px;
+}
+
+.alert-link {
+  white-space: nowrap;
+}
+
 
 /* Mobile optimization */
 @media (max-width: 768px) {
