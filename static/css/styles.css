@@ -257,6 +257,11 @@ h1.display-4.mb-4 {
   white-space: nowrap;
 }
 
+#countdownPlaceholder::after {
+    content: "⏳ 8 slots remaining";
+    animation: pulse 2s infinite;
+}
+
 
 /* Mobile optimization */
 @media (max-width: 768px) {
