@@ -253,9 +253,11 @@ h1.display-4.mb-4 {
   min-width: 180px;
 }
 
+/*
 .alert-link {
   white-space: nowrap;
 }
+*/
 
 #countdownPlaceholder::after {
     content: "⏳ 7 slots remaining";
