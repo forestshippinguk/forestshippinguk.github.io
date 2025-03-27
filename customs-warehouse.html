@@ -29,11 +29,20 @@
 
 <!-- Event snippet for Submit lead form conversion page -->
 <script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
   gtag('event', 'conversion', {
       'send_to': 'AW-16955174720/TPgTCM_6-q8aEMDe7ZQ_',
       'value': 1.0,
-      'currency': 'GBP'
+      'currency': 'GBP',
+      'event_callback': callback
   });
+  return false;
+}
 </script>
 
     
@@ -333,6 +342,9 @@
                     const errorData = await formspreeResponse.json();
                     throw new Error(`Form submission failed: ${errorData.error || 'Unknown error'}`);
                 }
+
+                // Track conversion
+                gtag_report_conversion();
 
                 // Show non-dismissible success modal
                 const modal = new bootstrap.Modal(document.getElementById('successModal'), {
