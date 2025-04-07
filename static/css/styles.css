@@ -260,7 +260,7 @@ h1.display-4.mb-4 {
 */
 
 #countdownPlaceholder::after {
-    content: "⏳ 5 slots remaining";
+    content: "⏳ 4 slots remaining";
     animation: pulse 2s infinite;
 }
 
